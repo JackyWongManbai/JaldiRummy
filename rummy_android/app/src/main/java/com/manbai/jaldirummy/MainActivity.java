@@ -258,6 +258,8 @@ public class MainActivity extends Activity {
                 String pay_type = msg.getString("pay_type");
                 JSONArray pay_data = msg.getJSONArray("pay_data");
                 PhonePEpayment(user_id, amount, merchant_transaction_id,callBackUrl,pay_type,pay_data);
+
+
                 break;
             case "pay_airpay":
                 Log.e(TAG, "start pay with airpay" );
@@ -306,6 +308,7 @@ public class MainActivity extends Activity {
         }
         return data;
     }
+
 
     private void callExternalInterface(String message){
         Log.e(TAG, "调用TS端，message="+message);
