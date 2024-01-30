@@ -206,7 +206,7 @@ public class MainActivity extends Activity {
         String data = "";
         String user_id = "";
         String merchant_transaction_id = "";
-        String callBackUrl = "";
+//        String callBackUrl = "";
         int amount = 0;
         if(name.equals("")==true){
             return "";
@@ -254,10 +254,10 @@ public class MainActivity extends Activity {
                 user_id = msg.getString("user_id");
                 merchant_transaction_id = msg.getString("merchant_transaction_id");
                 amount = msg.getIntValue("amount");
-                callBackUrl = msg.getString("callback_url");
+//                callBackUrl = msg.getString("callback_url");
                 String pay_type = msg.getString("pay_type");
                 JSONArray pay_data = msg.getJSONArray("pay_data");
-                PhonePEpayment(user_id, amount, merchant_transaction_id,callBackUrl,pay_type,pay_data);
+                PhonePEpayment(user_id, amount, merchant_transaction_id,"http://game.jaldirummy.com/api/pay/PhonePECallBack",pay_type,pay_data);
 
 
                 break;
